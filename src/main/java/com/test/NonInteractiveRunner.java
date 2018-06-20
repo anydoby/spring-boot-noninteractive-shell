@@ -39,7 +39,7 @@ public class NonInteractiveRunner implements ApplicationRunner {
              * Else just do the job and exit
              */
             InteractiveShellApplicationRunner.disable(environment);
-            Object evaluate = shell.evaluate(() -> String.join(" ", args.getNonOptionArgs()));
+            Object evaluate = shell.evaluate(() -> String.join(" ", args.args.getSourceArgs()()));
             if (evaluate != null) {
                 System.out.println(evaluate);
             }
